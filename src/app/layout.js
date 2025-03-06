@@ -12,8 +12,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "GSAP Caraousal",
-  description: "Generated GSAP Carousal create next app",
+  title: "GSAP carousel",
+  description: "Generated GSAP carousel create next app",
 };
 
 export default function RootLayout({ children }) {
