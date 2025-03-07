@@ -128,6 +128,10 @@ export default function Home() {
   }
 
   const renderSlideContent = (slide) => {
+    if (!slide || !slide.type ||!slide.content ||  !["start", "end", "image"].includes(slide.type)) {
+      return <span className="text-black font-bold">Invalid Slide</span>;
+    }
+    
     if (slide.type === "image") {
       return (
         <img
@@ -138,14 +142,14 @@ export default function Home() {
       );
     } else if (slide.type === "start") {
       return (
-        <div className="text-black text-center font-bold pl-6">
+        <div className="text-black text-center font-bold pl-6 overflow-hidden">
           <h1 className="text-2xl text-start font-[Poppins]"> {slide.content.heading} </h1>
           <p className="text-xs text-start"> {slide.content.location} </p>
         </div>
       );
     } else if (slide.type === "end") {
       return (
-        <div className=" text-center font-bold flex flex-col gap-3 ">
+        <div className=" text-center font-bold flex flex-col gap-3 overflow-hidden ">
           <div className="flex items-center gap-2 ">
             <div className="h-6 w-6 rounded-full bg-orange-600 flex items-center justify-center"></div>
             <h1 className="text-orange-600 text-2xl">
