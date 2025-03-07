@@ -113,7 +113,7 @@ export default function Home() {
     try {
       const parsedData = JSON.parse(e.target.value);
       setSlides(parsedData);
-    } catch {
+    } catch (e){
       alert("Invalid JSON");
     }
   };
